@@ -31,9 +31,18 @@ class TicTacToe:
         return board
 
     def __eq__(self, other):
+        """
+        allows to compare boards
+        :param other:
+        :return:
+        """
         return np.array_equal(self.board, other.board)
 
     def __hash__(self):
+        """
+        needed to be able to use sets of boards in position generator
+        :return:
+        """
         return hash(self.board.tostring())
 
     def who_won(self):
